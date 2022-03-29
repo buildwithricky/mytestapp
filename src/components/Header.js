@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import { colors } from './component.utils.js';
-
+import logo from '../assets/Logo.png';
 const Header = () => {
   return (
     <Container>
-      <H1>MyTestApp</H1>
+      <H1>
+        <img src={logo} alt="logo" />
+      </H1>
     </Container>
   );
 };
@@ -21,7 +23,7 @@ const Container = styled.div`
 
 const H1 = styled.h1`
   color: #fff;
-  border: 1px solid #fff;
+
   padding: 10px;
   width: max-content;
 `;

@@ -3,7 +3,16 @@ import styled from 'styled-components';
 const Search = () => {
   return (
     <Container>
-      <h1>Search</h1>
+      <h1
+        style={{
+          fontWeight: 400,
+          fontStyle: 'normal',
+
+          fontSize: '24px',
+          lineHeight: '31.25px',
+        }}>
+        Search
+      </h1>
       <SearchInput />
     </Container>
   );
