@@ -20,8 +20,11 @@ const Container = styled.div`
   border-radius: 10px;
   align-items: center;
   padding: 10px;
-  background-image: url(${(props) =>
-    props.movieImage}});
+  background: url(${(props) => props.movieImage}})
+    no-repeat;
+  background-size: 300px 300px;
+  background-position: center;
+
   @media (320px) {
     min-height: 200px;
     min-width: 200px;
@@ -35,6 +38,7 @@ const H1 = styled.h1`
   line-height: 31px;
   line-height: 100%;
   vertical-align: Center;
+
   @media (320px) {
     font-size: 18px;
     line-height: 23.44px;

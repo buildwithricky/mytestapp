@@ -1,10 +1,18 @@
 import styled from 'styled-components';
 
-const Search = () => {
+const Search = ({
+  searchText,
+  setSearchText,
+}) => {
   return (
     <Container>
       <H1>Search</H1>
-      <SearchInput />
+      <SearchInput
+        value={searchText}
+        onChange={(e) => {
+          setSearchText(e.target.value);
+        }}
+      />
     </Container>
   );
 };
