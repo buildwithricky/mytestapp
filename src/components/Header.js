@@ -13,12 +13,17 @@ const Header = () => {
 
 export default Header;
 const Container = styled.div`
-  width: 100%;
-  height: 40px;
+  height: 140px;
   display: flex;
   align-items: center;
   padding: 20px 80px;
   background-color: ${colors.header};
+  @media (max-width: 834px) {
+    justify-content: center;
+  }
+  @media (max-width: 564px) {
+    height: 67px;
+  }
 `;
 
 const H1 = styled.h1`

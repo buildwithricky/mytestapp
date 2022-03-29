@@ -11,8 +11,8 @@ const MovieCard = ({ movie }) => {
 export default MovieCard;
 
 const Container = styled.div`
-  min-height: 250px;
-  min-width: 250px;
+  min-height: 300px;
+  min-width: 300px;
   background-color: #000;
   display: grid;
   margin-right: 10px;
@@ -22,7 +22,21 @@ const Container = styled.div`
   padding: 10px;
   background-image: url(${(props) =>
     props.movieImage}});
+  @media (320px) {
+    min-height: 200px;
+    min-width: 200px;
+  }
 `;
 const H1 = styled.h1`
   color: #fff;
+
+  font-style: regular;
+  font-size: 24px;
+  line-height: 31px;
+  line-height: 100%;
+  vertical-align: Center;
+  @media (320px) {
+    font-size: 18px;
+    line-height: 23.44px;
+  }
 `;

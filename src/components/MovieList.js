@@ -3,24 +3,32 @@ import Title from './Title';
 import MovieCard from './MovieCard';
 const MovieList = ({ movieData }) => {
   return (
-    <Container>
-      <Title />
-
-      <div
-        style={{
-          display: 'flex',
-        }}>
-        {movieData.map((movie) => (
-          <MovieCard movie={movie} />
-        ))}
-      </div>
-    </Container>
+    <>
+      <Title
+        movieCategory={movieData[0].Title.split(
+          ' '
+        )}
+      />
+      <Container>
+        <div
+          style={{
+            display: 'flex',
+          }}>
+          {movieData.map((movie) => (
+            <MovieCard movie={movie} />
+          ))}
+        </div>
+      </Container>
+    </>
   );
 };
 export default MovieList;
 const Container = styled.div`
-  overflow-x: hidden;
   display: flex;
+  cursor: pointer;
+  overflow-x: scroll;
   flex-direction: column;
-  width: 200vh;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;

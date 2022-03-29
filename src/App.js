@@ -15,26 +15,42 @@ function App() {
       const response = await axios.get(
         `${baseUrl}&s=marvel&type=movie&page=1`
       );
-      const data = await response.data;
+      const responseList2 = await axios.get(
+        `${baseUrl}&s=batman&type=movie&page=1`
+      );
 
-      setMovies(data.Search);
-      console.log(data);
+      const data2 = await responseList2.data;
+      const data = await response.data;
+      Promise.all([data2, data]).then((values) =>
+        setMovies([
+          values[0].Search,
+          values[1].Search,
+        ])
+      );
     };
     getMovies();
-  }, []);
+  }, [movie]);
   return (
     <Container>
       <Header />
       <Slider />
       {movie.length > 1 ? (
-        <div
-          style={{
-            padding: '15px 32px',
-          }}>
-          <Search />
-          <MovieList movieData={movie} />
-          <MovieList movieData={movie} />
-        </div>
+        <>
+          <div
+            style={{
+              margin: '15px 77px',
+            }}>
+            <Search />
+          </div>
+          <div
+            style={{
+              margin: '15px 0px 0px 77px',
+            }}>
+            {/* <Search /> */}
+            <MovieList movieData={movie[0]} />
+            <MovieList movieData={movie[1]} />
+          </div>
+        </>
       ) : (
         <p>loading...</p>
       )}
